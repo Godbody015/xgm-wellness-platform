@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Herbal Teas",
+    "icon": "tea",
+    "description": "Traditional herbal teas for daily wellness."
+  },
+  {
+    "id": 2,
+    "name": "Supplements",
+    "icon": "capsule",
+    "description": "Natural supplements for health support."
+  },
+  {
+    "id": 3,
+    "name": "Face Creams",
+    "icon": "leaf",
+    "description": "Natural skincare and beauty products."
+  },
+  {
+    "id": 4,
+    "name": "Body Care",
+    "icon": "spa",
+    "description": "Massage oils, lotions and body wellness products."
+  },
+  {
+    "id": 5,
+    "name": "Natural Soaps",
+    "icon": "soap",
+    "description": "Handcrafted soaps made from natural ingredients."
+  },
+  {
+    "id": 6,
+    "name": "Traditional Wellness",
+    "icon": "nature",
+    "description": "Products inspired by African traditional wellness."
+  },
+  {
+    "id": 7,
+    "name": "Herbal Powders",
+    "icon": "eco",
+    "description": "Traditional powdered herbal products."
+  },
+  {
+    "id": 8,
+    "name": "Liquid Extracts",
+    "icon": "water_drop",
+    "description": "Liquid herbal preparations and extracts."
+  }
+    ]
