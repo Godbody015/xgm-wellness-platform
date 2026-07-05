@@ -248,3 +248,25 @@ header{
     background:black;
     color:white;
 }
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:white;
+}
+
+.about-content{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.about h2{
+    margin-bottom:25px;
+}
+
+.about p{
+    margin-bottom:20px;
+    font-size:18px;
+}
