@@ -343,3 +343,19 @@ header{
     border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:#d4af37;
+    text-align:center;
+}
+
+.contact h2{
+    margin-bottom:20px;
+}
+
+.contact p{
+    margin-bottom:30px;
+}
