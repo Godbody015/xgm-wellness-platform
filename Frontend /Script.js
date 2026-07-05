@@ -50,3 +50,20 @@ button.style.transform="scale(1)";
 });
 
 });
+const cards=document.querySelectorAll(".product-card");
+
+cards.forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.boxShadow="0 20px 40px rgba(0,0,0,.25)";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.boxShadow="0 5px 15px rgba(0,0,0,.1)";
+
+});
+
+});
