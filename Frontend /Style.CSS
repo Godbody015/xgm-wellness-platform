@@ -321,3 +321,25 @@ header{
 .reseller-benefits li{
     margin:15px 0;
 }
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials{
+    background:#fff;
+    text-align:center;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.testimonial-card{
+    background:#f8f8f8;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
