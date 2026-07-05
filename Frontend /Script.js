@@ -67,3 +67,20 @@ card.style.boxShadow="0 5px 15px rgba(0,0,0,.1)";
 });
 
 });
+window.addEventListener("scroll",()=>{
+
+const header=document.querySelector("header");
+
+if(window.scrollY>80){
+
+header.style.boxShadow="0 5px 20px rgba(0,0,0,.25)";
+
+}
+
+else{
+
+header.style.boxShadow="none";
+
+}
+
+});
