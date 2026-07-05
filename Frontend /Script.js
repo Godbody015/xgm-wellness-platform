@@ -84,3 +84,12 @@ header.style.boxShadow="none";
 }
 
 });
+// Future Supabase Integration
+
+async function loadProducts(){
+
+console.log("Products will load from Supabase here.");
+
+}
+
+loadProducts();
