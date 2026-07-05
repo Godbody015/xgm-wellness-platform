@@ -37,3 +37,65 @@ h1,h2,h3,h4{
 p{
     color:#555;
 }
+header{
+    background:#000;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 10%;
+
+}
+
+.logo img{
+
+    height:65px;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:30px;
+
+}
+
+.nav-links a{
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+.nav-links a:hover{
+
+    color:#d4af37;
+
+}
+
+.login-btn{
+
+    background:#d4af37;
+
+    color:black;
+
+    padding:12px 25px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+}
