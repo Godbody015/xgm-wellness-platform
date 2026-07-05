@@ -379,3 +379,43 @@ footer p{
     color:white;
     margin:10px 0;
 }
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.hero{
+
+    flex-direction:column;
+    text-align:center;
+
+}
+
+.navbar{
+
+    flex-direction:column;
+    gap:20px;
+
+}
+
+.nav-links{
+
+    flex-direction:column;
+    text-align:center;
+
+}
+
+.hero-content h1{
+
+    font-size:38px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+}
