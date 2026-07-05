@@ -99,3 +99,84 @@ header{
     font-weight:bold;
 
 }
+.hero{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:60px;
+
+    min-height:90vh;
+
+}
+
+.hero-content{
+
+    flex:1;
+
+}
+
+.hero-content h1{
+
+    font-size:58px;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content p{
+
+    font-size:20px;
+
+    margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.shop-btn{
+
+    background:#d4af37;
+
+    color:black;
+
+    padding:15px 30px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+}
+
+.reseller-btn{
+
+    background:black;
+
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:10px;
+
+}
+
+.hero-image{
+
+    flex:1;
+
+}
+
+.hero-image img{
+
+    border-radius:25px;
+
+}
