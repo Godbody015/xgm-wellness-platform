@@ -33,3 +33,20 @@ window.addEventListener("load",()=>{
     console.log("Welcome to XGM Wellness");
 
 });
+const buttons = document.querySelectorAll(".shop-btn,.reseller-btn");
+
+buttons.forEach(button=>{
+
+button.addEventListener("mouseenter",()=>{
+
+button.style.transform="scale(1.05)";
+
+});
+
+button.addEventListener("mouseleave",()=>{
+
+button.style.transform="scale(1)";
+
+});
+
+});
