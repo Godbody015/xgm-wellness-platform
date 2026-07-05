@@ -220,3 +220,31 @@ header{
 .product-card p{
     margin-bottom:20px;
 }
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
+    text-align:center;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.category-card{
+    background:#d4af37;
+    color:black;
+    padding:35px;
+    border-radius:15px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.category-card:hover{
+    background:black;
+    color:white;
+}
