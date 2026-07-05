@@ -1,10 +1,11 @@
-// ======================================
+// =======================================
 // XGM WELLNESS SUPABASE CONNECTION
 // Version 1.0
-// ======================================
+// =======================================
 
+const SUPABASE_URL = "https://xlztjyhzfepqdlsitckq.supabase.co";
 
-https://xlztjyhzfepqdlsitckq.supabase.co/rest/v1/
+const SUPABASE_ANON_KEY = "PASTE_YOUR_FULL_sb_publishable_KEY_HERE";
+
 // Future connection point.
 console.log("Supabase connection ready.");
-sb_publishable_ZfNeTo1UNTZdTzKn0N-l5A_HqTCXxYr
