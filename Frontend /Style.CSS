@@ -270,3 +270,30 @@ header{
     margin-bottom:20px;
     font-size:18px;
 }
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.why-us{
+    background:#f8f8f8;
+    text-align:center;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.why-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.why-card:hover{
+    transform:translateY(-8px);
+}
