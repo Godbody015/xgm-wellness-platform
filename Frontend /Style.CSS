@@ -359,3 +359,23 @@ header{
 .contact p{
     margin-bottom:30px;
 }
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#000;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.footer-logo{
+    width:120px;
+    margin:0 auto 20px;
+}
+
+footer p{
+    color:white;
+    margin:10px 0;
+}
