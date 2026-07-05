@@ -180,3 +180,43 @@ header{
     border-radius:25px;
 
 }
+/* =========================
+   FEATURED PRODUCTS
+========================= */
+
+.featured-products{
+    background:#f8f8f8;
+    text-align:center;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.product-card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+}
+
+.product-card img{
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.product-card h3{
+    margin-bottom:10px;
+}
+
+.product-card p{
+    margin-bottom:20px;
+}
