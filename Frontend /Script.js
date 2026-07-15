@@ -1,9 +1,15 @@
+
 /* =====================================
    XGM WELLNESS PLATFORM
    Version 1.0
    Author: Everyday Plug
 ===================================== */
 
+const supabaseUrl = "https://xlztjyhzfepqdlsitckq.supabase.co";
+const supabaseKey = "YOUR_PUBLISHABLE_KEY";
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+console.log("XGM Wellness Platform Loaded Successfully");
 console.log("XGM Wellness Platform Loaded Successfully");
 
 /* Smooth scroll for navigation */
