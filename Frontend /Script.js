@@ -90,12 +90,32 @@ header.style.boxShadow="none";
 }
 
 });
-// Future Supabase Integration
+async function loadProducts() {
 
-async function loadProducts(){
+    const { data, error } = await supabase
+        .from("products")
+        .select("*");
 
-console.log("Products will load from Supabase here.");
+    if (error) {
+        console.error(error);
+        return;
+    }
 
+    const productGrid = document.getElementById("product-grid");
+
+    productGrid.innerHTML = "";
+
+    data.forEach(product => {
+
+        productGrid.innerHTML += `
+            <div class="product-card">
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <a href="#" class="shop-btn">View Product</a>
+            </div>
+        `;
+    });
 }
 
 loadProducts();
