@@ -121,5 +121,167 @@ function initializeSmoothScroll(){
         });
 
     });
+/*==================================================
+BACK TO TOP
+==================================================*/
 
+function initializeBackToTop(){
+
+    const button=document.querySelector(".back-to-top");
+
+    if(!button) return;
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY>400){
+
+            button.classList.add("show");
+
+        }else{
+
+            button.classList.remove("show");
+
+        }
+
+    });
+
+    button.addEventListener("click",(e)=>{
+
+        e.preventDefault();
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    });
+
+}
+
+/*==================================================
+SCROLL REVEAL ANIMATION
+==================================================*/
+
+function initializeAnimations(){
+
+    const elements=document.querySelectorAll(
+
+        ".feature-card, .product-card, .category-card, .why-card, .testimonial-card"
+
+    );
+
+    if(elements.length===0) return;
+
+    const observer=new IntersectionObserver((entries)=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                entry.target.style.opacity="1";
+
+                entry.target.style.transform="translateY(0)";
+
+            }
+
+        });
+
+    },{
+
+        threshold:0.15
+
+    });
+
+    elements.forEach(element=>{
+
+        element.style.opacity="0";
+
+        element.style.transform="translateY(40px)";
+
+        element.style.transition="all .6s ease";
+
+        observer.observe(element);
+
+    });
+
+}
+
+/*==================================================
+NEWSLETTER
+==================================================*/
+
+function initializeNewsletter(){
+
+    const form=document.querySelector(".newsletter-form");
+
+    if(!form) return;
+
+    form.addEventListener("submit",(e)=>{
+
+        e.preventDefault();
+
+        const email=form.querySelector("input");
+
+        if(!email.value.trim()){
+
+            showToast("Please enter your email.","error");
+
+            return;
+
+        }
+
+        showToast("Thank you for subscribing!","success");
+
+        form.reset();
+
+    });
+
+}
+
+/*==================================================
+CONTACT FORM
+==================================================*/
+
+function initializeContactForm(){
+
+    const form=document.querySelector(".contact-form");
+
+    if(!form) return;
+
+    form.addEventListener("submit",(e)=>{
+
+        e.preventDefault();
+
+        const inputs=form.querySelectorAll("input, textarea");
+
+        let valid=true;
+
+        inputs.forEach(input=>{
+
+            if(input.value.trim()===""){
+
+                valid=false;
+
+            }
+
+        });
+
+        if(!valid){
+
+            showToast("Please complete all fields.","error");
+
+            return;
+
+        }
+
+        showToast("Your message has been sent.","success");
+
+        form.reset();
+
+    });
+
+}
 }
