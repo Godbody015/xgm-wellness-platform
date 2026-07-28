@@ -314,3 +314,122 @@ function showToast(message,type="success"){
     },100);
 
     setTimeout
+/*==================================================
+LOADING SCREEN
+==================================================*/
+
+window.addEventListener("load",()=>{
+
+    const loader=document.querySelector(".loader");
+
+    if(loader){
+
+        loader.classList.add("loader-hidden");
+
+        setTimeout(()=>{
+
+            loader.remove();
+
+        },500);
+
+    }
+
+});
+
+/*==================================================
+NUMBER COUNTER
+==================================================*/
+
+function animateCounters(){
+
+    const counters=document.querySelectorAll("[data-counter]");
+
+    if(counters.length===0) return;
+
+    counters.forEach(counter=>{
+
+        const target=parseInt(counter.dataset.counter);
+
+        let current=0;
+
+        const increment=Math.ceil(target/80);
+
+        const timer=setInterval(()=>{
+
+            current+=increment;
+
+            if(current>=target){
+
+                current=target;
+
+                clearInterval(timer);
+
+            }
+
+            counter.textContent=current;
+
+        },20);
+
+    });
+
+}
+
+window.addEventListener("load",animateCounters);
+
+/*==================================================
+IMAGE LAZY LOADING
+==================================================*/
+
+document.querySelectorAll("img").forEach(image=>{
+
+    image.loading="lazy";
+
+});
+
+/*==================================================
+COPYRIGHT YEAR
+==================================================*/
+
+const year=document.getElementById("currentYear");
+
+if(year){
+
+    year.textContent=new Date().getFullYear();
+
+}
+
+/*==================================================
+UTILITY FUNCTIONS
+==================================================*/
+
+function formatCurrency(price){
+
+    return "R"+Number(price).toFixed(2);
+
+}
+
+function scrollTopPage(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+/*==================================================
+CONSOLE
+==================================================*/
+
+console.log("====================================");
+
+console.log("XGM Wellness Website");
+
+console.log("Version 1.0");
+
+console.log("Status : Running");
+
+console.log("====================================");
