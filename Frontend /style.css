@@ -1071,6 +1071,7 @@ CONTACT SECTION
     font-size:1rem;
 
     transition:var(--transition);
+}
 .contact-form input:focus,
 .contact-form textarea:focus{
 
