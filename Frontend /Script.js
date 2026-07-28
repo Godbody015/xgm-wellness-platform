@@ -285,3 +285,32 @@ function initializeContactForm(){
 
 }
 }
+/*==================================================
+TOAST NOTIFICATIONS
+==================================================*/
+
+function showToast(message,type="success"){
+
+    const existing=document.querySelector(".toast");
+
+    if(existing){
+
+        existing.remove();
+
+    }
+
+    const toast=document.createElement("div");
+
+    toast.className=`toast ${type}`;
+
+    toast.innerHTML=message;
+
+    document.body.appendChild(toast);
+
+    setTimeout(()=>{
+
+        toast.classList.add("show");
+
+    },100);
+
+    setTimeout
