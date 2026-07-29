@@ -1,1 +1,31 @@
+<header class="header">
+    <nav class="navbar">
 
+        <a href="index.html" class="logo">
+            <img src="https://xlztjyhzfepqdlsitckq.supabase.co/storage/v1/object/public/LOGOS/file_00000000f9f471f4a96965eeeef0c307.png"
+                alt="XGM Wellness Logo">
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="reseller.html">Become a Reseller</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-icons">
+            <a href="login.html">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">0</span>
+            </a>
+            <button class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+    </nav>
+</header>
