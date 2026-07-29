@@ -1,1 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>XGM Wellness | Wellness & Beauty</title>
+
+    <meta name="description"
+        content="Premium wellness and beauty products. Shop trusted natural solutions for health, skincare, body care and personal wellness.">
+
+    <meta name="keywords"
+        content="XGM Wellness, Wellness, Beauty, Health Products, Skincare, South Africa">
+
+    <meta name="author" content="XGM Wellness">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!--==================== HEADER (injected by include.js) ====================-->
+<div id="site-header"></div>
+
+<!--==================== HERO ====================-->
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">Wellness • Beauty • Confidence</span>
+
+            <h1>Discover Wellness That Inspires Confidence</h1>
+
+            <p>
+                Explore premium wellness and beauty products carefully selected to help you look good, feel better,
+                and live healthier every day.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="products.html" class="primary-btn">Shop Now</a>
+                <a href="reseller.html" class="secondary-btn">Become a Reseller</a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <h3>100%</h3>
+                    <span>Natural Inspired</span>
+                </div>
+                <div>
+                    <h3>Quality</h3>
+                    <span>Trusted Products</span>
+                </div>
+                <div>
+                    <h3>SA</h3>
+                    <span>Nationwide Delivery</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="https://xlztjyhzfepqdlsitckq.supabase.co/storage/v1/object/public/BANNERS/Hero%20banner/file_00000000a76471f4a353a2e90a8db5b8.png"
+                alt="XGM Wellness Hero Banner">
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== TRUST FEATURES ====================-->
+<section class="features">
+
+    <div class="feature-card">
+        <i class="fa-solid fa-leaf"></i>
+        <h3>100% Natural</h3>
+        <p>Carefully selected wellness products made with quality in mind.</p>
+    </div>
+
+    <div class="feature-card">
+        <i class="fa-solid fa-shield-heart"></i>
+        <h3>Quality Assured</h3>
+        <p>Trusted products that meet our commitment to excellence.</p>
+    </div>
+
+    <div class="feature-card">
+        <i class="fa-solid fa-heart"></i>
+        <h3>Made With Care</h3>
+        <p>Helping people feel confident through wellness and beauty.</p>
+    </div>
+
+    <div class="feature-card">
+        <i class="fa-solid fa-truck-fast"></i>
+        <h3>Nationwide Delivery</h3>
+        <p>Fast and reliable shipping across South Africa.</p>
+    </div>
+
+</section>
+
+<!--==================== FEATURED PRODUCTS ====================-->
+<section class="featured-products">
+
+    <div class="section-heading">
+        <span>Our Collection</span>
+        <h2>Featured Products</h2>
+        <p>Discover some of our most loved wellness and beauty products.</p>
+    </div>
+
+    <!-- Populated dynamically by products.js from the Supabase `products` table.
+         Do not hardcode product cards here — see loadFeaturedProducts() -->
+    <div id="featured-products" class="product-grid">
+        <p class="products-loading">Loading products…</p>
+    </div>
+
+    <div class="section-button">
+        <a href="products.html" class="primary-btn">View All Products</a>
+    </div>
+
+</section>
+
+<!--==================== WELLNESS ESSENTIALS ====================-->
+<section class="wellness-section">
+
+    <div class="section-heading">
+        <span>Explore More</span>
+        <h2>Wellness Essentials</h2>
+        <p>
+            Browse our carefully selected collection designed for beauty,
+            wellness and everyday self-care.
+        </p>
+    </div>
+
+    <div class="category-grid">
+
+        <div class="category-card">
+            <i class="fa-solid fa-spa"></i>
+            <h3>Beauty Care</h3>
+            <p>Premium beauty products for everyday confidence.</p>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h3>Health</h3>
+            <p>Support your wellness journey with trusted products.</p>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-seedling"></i>
+            <h3>Natural Care</h3>
+            <p>Inspired by nature for healthier living.</p>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-capsules"></i>
+            <h3>Supplements</h3>
+            <p>Products created to complement your lifestyle.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== ABOUT PREVIEW ====================-->
+<section class="about-preview">
+
+    <div class="about-image">
+        <img src="https://xlztjyhzfepqdlsitckq.supabase.co/storage/v1/object/public/BANNERS/About%20xgm%20wellness%20/file_00000000822c71f4b465e78c04d6f14d.png"
+            alt="About XGM Wellness">
+    </div>
+
+    <div class="about-content">
+        <span>About XGM Wellness</span>
+        <h2>Your Trusted Wellness & Beauty Partner</h2>
+        <p>
+            XGM Wellness is committed to providing premium wellness and beauty
+            products that empower confidence, encourage healthier lifestyles,
+            and deliver quality you can trust.
+        </p>
+        <p>
+            Our mission is to make wellness more accessible by offering carefully
+            selected products backed by excellent customer service and nationwide
+            delivery.
+        </p>
+        <a href="about.html" class="primary-btn">Learn More</a>
+    </div>
+
+</section>
+
+<!--==================== WHY CHOOSE US ====================-->
+<section class="why-choose">
+
+    <div class="section-heading">
+        <span>Why XGM Wellness</span>
+        <h2>Why Choose Us?</h2>
+        <p>
+            We are committed to delivering quality wellness products and
+            exceptional customer service.
+        </p>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <i class="fa-solid fa-award"></i>
+            <h3>Premium Quality</h3>
+            <p>
+                We carefully select products that meet our standards for quality,
+                wellness and customer satisfaction.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>Fast Delivery</h3>
+            <p>Reliable nationwide delivery across South Africa with secure packaging.</p>
+        </div>
+
+        <div class="why-card">
+            <i class="fa-solid fa-lock"></i>
+            <h3>Secure Shopping</h3>
+            <p>Shop confidently through our secure online platform with trusted checkout processes.</p>
+        </div>
+
+        <div class="why-card">
+            <i class="fa-solid fa-headset"></i>
+            <h3>Customer Support</h3>
+            <p>Our friendly team is ready to assist you before and after your purchase.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== RESELLER ====================-->
+<section class="reseller-section">
+
+    <div class="reseller-content">
+        <span>Business Opportunity</span>
+        <h2>Become an XGM Wellness Reseller</h2>
+        <p>
+            Start your own wellness business by joining our reseller programme.
+            Gain access to wholesale pricing, marketing support and quality
+            products your customers will love.
+        </p>
+
+        <div class="reseller-benefits">
+            <div class="benefit">
+                <i class="fa-solid fa-check"></i>
+                <span>Wholesale Pricing</span>
+            </div>
+            <div class="benefit">
+                <i class="fa-solid fa-check"></i>
+                <span>Marketing Support</span>
+            </div>
+            <div class="benefit">
+                <i class="fa-solid fa-check"></i>
+                <span>Nationwide Delivery</span>
+            </div>
+            <div class="benefit">
+                <i class="fa-solid fa-check"></i>
+                <span>Trusted Wellness Brand</span>
+            </div>
+        </div>
+
+        <a href="reseller.html" class="primary-btn">Apply Now</a>
+    </div>
+
+    <div class="reseller-image">
+        <img src="https://xlztjyhzfepqdlsitckq.supabase.co/storage/v1/object/public/BANNERS/Become%20a%20reseller%20banner/file_0000000080d071f4a23cc44b06bfac25.png"
+            alt="Become a Reseller">
+    </div>
+
+</section>
+
+<!--==================== TESTIMONIALS ====================-->
+<section class="testimonials">
+
+    <div class="section-heading">
+        <span>Testimonials</span>
+        <h2>What Our Customers Say</h2>
+        <p>Customer satisfaction is our greatest achievement.</p>
+    </div>
+
+    <div class="testimonial-grid">
+
+        <article class="testimonial-card">
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>"Excellent customer service and premium quality products. I will definitely order again."</p>
+            <div class="customer">
+                <div class="customer-avatar">M</div>
+                <div>
+                    <h4>Happy Customer</h4>
+                    <span>Verified Buyer</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="testimonial-card">
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>"Fast delivery and amazing wellness products. Highly recommended."</p>
+            <div class="customer">
+                <div class="customer-avatar">N</div>
+                <div>
+                    <h4>Happy Customer</h4>
+                    <span>Verified Buyer</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="testimonial-card">
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>"Professional service, quality products and a smooth shopping experience."</p>
+            <div class="customer">
+                <div class="customer-avatar">K</div>
+                <div>
+                    <h4>Happy Customer</h4>
+                    <span>Verified Buyer</span>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<!--==================== NEWSLETTER ====================-->
+<section class="newsletter">
+
+    <div class="newsletter-content">
+        <span>Stay Connected</span>
+        <h2>Join Our Newsletter</h2>
+        <p>
+            Subscribe to receive updates on new products, exclusive offers,
+            promotions and wellness tips.
+        </p>
+
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit" class="primary-btn">Subscribe</button>
+        </form>
+    </div>
+
+</section>
+
+<!--==================== CONTACT PREVIEW ====================-->
+<section class="contact-preview">
+
+    <div class="section-heading">
+        <span>We're Here To Help</span>
+        <h2>Get In Touch</h2>
+        <p>
+            Have questions about our products or reseller programme?
+            We'd love to hear from you.
+        </p>
+    </div>
+
+    <div class="contact-buttons">
+        <a href="contact.html" class="primary-btn">Contact Us</a>
+        <a href="products.html" class="secondary-btn">Shop Products</a>
+    </div>
+
+</section>
+
+<!--==================== FOOTER (injected by include.js) ====================-->
+<div id="site-footer"></div>
+
+<!--==================== SCRIPTS ====================-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="database/supabase.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/include.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/auth.js"></script>
+
+</body>
+
+</html>
