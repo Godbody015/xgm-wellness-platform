@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart | XGM Wellness</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<section class="page-banner">
+    <div class="page-banner-content">
+        <span>Your Order</span>
+        <h1>Shopping Cart</h1>
+    </div>
+</section>
+
+<section class="cart-section">
+
+    <div id="cart-items" class="cart-items-list">
+        <p class="products-loading">Loading cart…</p>
+    </div>
+
+    <div class="cart-summary">
+        <div class="cart-summary-row">
+            <span>Subtotal</span>
+            <span id="cart-total">R0.00</span>
+        </div>
+        <p class="cart-summary-note">Delivery calculated at checkout.</p>
+        <a href="checkout.html" class="primary-btn cart-checkout-btn">
+            Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="products.html" class="secondary-btn cart-continue-btn">
+            Continue Shopping
+        </a>
+    </div>
+
+</section>
+
+<div id="site-footer"></div>
+
+<!--==================== SCRIPTS ====================-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="database/supabase.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/include.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/auth.js"></script>
+
+</body>
+
+</html>
