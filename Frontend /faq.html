@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FAQs | XGM Wellness</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<section class="page-banner">
+    <div class="page-banner-content">
+        <span>Support</span>
+        <h1>Frequently Asked Questions</h1>
+    </div>
+</section>
+
+<section class="faq-section">
+
+    <div class="faq-item">
+        <button class="faq-question">
+            How long does delivery take?
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Orders are typically delivered within 2-5 business days across South Africa, depending on your location.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            What payment methods do you accept?
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+            <p>We accept major debit and credit cards, as well as secure EFT payment options at checkout.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Can I return a product if I'm not satisfied?
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Yes — please see our <a href="returns.html">Returns & Refunds</a> page for full details on our return policy and process.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            How do I become a reseller?
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Visit our <a href="reseller.html">Become a Reseller</a> page and complete the application form. Our team will be in touch to get you started.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Are your products suitable for sensitive skin?
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Each product listing includes ingredients and usage guidance. If you have specific skin sensitivities, we recommend checking the ingredient list or contacting us before purchasing.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            How can I track my order?
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Once your order ships, you'll receive tracking information via email or WhatsApp so you can follow its progress.</p>
+        </div>
+    </div>
+
+</section>
+
+<div id="site-footer"></div>
+
+<!--==================== SCRIPTS ====================-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="database/supabase.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/include.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/auth.js"></script>
+<script>
+document.addEventListener("xgm:partialsLoaded", () => {
+    document.querySelectorAll(".faq-question").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const item = btn.closest(".faq-item");
+            const wasOpen = item.classList.contains("open");
+            document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
+            if(!wasOpen) item.classList.add("open");
+        });
+    });
+});
+</script>
+
+</body>
+
+</html>
