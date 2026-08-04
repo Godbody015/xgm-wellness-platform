@@ -1,1 +1,21 @@
-
+<!--==================== RESELLER CTA ====================-->
+<section class="reseller-cta">
+    <div class="reseller-cta-content">
+        <div class="reseller-cta-icon"><i class="fa-solid fa-people-group"></i></div>
+        <div class="reseller-cta-text">
+            <span class="section-tag light">Partner With Us</span>
+            <h2>Become a Reseller</h2>
+            <p>Start your own wellness business with XGM Wellness. Quality products. Great support. Real results.</p>
+        </div>
+    </div>
+    <div class="reseller-cta-action">
+        <div class="reseller-cta-stat">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <div>
+                <h3>Build. Grow. Earn.</h3>
+                <p>Join our reseller network and create lasting impact.</p>
+            </div>
+        </div>
+        <a href="reseller.html" class="white-btn">Become a Reseller <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</section>
