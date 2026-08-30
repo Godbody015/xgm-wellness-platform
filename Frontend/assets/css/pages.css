@@ -540,7 +540,68 @@ uses it. Reuses the same CSS variables (--primary, --accent,
     z-index: 5;
     margin-top: -70px;
 }
+/*==================== HERO SECTION ====================*/
+.hero{
+    position: relative;
+    padding: 160px 8% 60px;
+    background: linear-gradient(180deg, #dcebe4 0%, #eef6f1 100%);
+    overflow: hidden;
+}
 
+.hero-container{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-tag{
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgba(46,139,87,.1);
+    color: var(--primary);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: .85rem;
+    letter-spacing: .5px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1{
+    font-size: 3.6rem;
+    color: var(--heading);
+    margin-bottom: 20px;
+}
+
+.hero-content p{
+    font-size: 1.1rem;
+    color: var(--text);
+    max-width: 480px;
+    margin-bottom: 34px;
+}
+
+.hero-buttons{
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.hero-image{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.hero-image img{
+    width: 100%;
+    max-width: 520px;
+    object-fit: contain;
+    margin-left: auto;
+}
 /*==================== PAGE BANNER ====================*/
 .page-banner{
     padding: 100px 24px 60px;
