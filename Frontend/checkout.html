@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | XGM Wellness</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<!--==================== CHECKOUT SECTION ====================-->
+<section class="checkout-section">
+
+    <h2>Checkout</h2>
+
+    <div class="checkout-layout">
+
+        <form id="checkout-form" class="checkout-form reveal-left">
+            <h3>Delivery Details</h3>
+            <input type="text" id="checkout-name" placeholder="Full Name" required>
+            <input type="email" id="checkout-email" placeholder="Email Address" required>
+            <input type="tel" id="checkout-phone" placeholder="Phone Number" required>
+            <input type="text" id="checkout-address" placeholder="Delivery Address" required>
+
+            <p id="checkout-message" class="auth-message"></p>
+
+            <button type="submit" class="primary-btn">Place Order <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+
+        <div class="checkout-summary reveal-right">
+            <h3>Order Summary</h3>
+            <div id="checkout-items"></div>
+            <div class="checkout-total">
+                <span>Total</span>
+                <span id="checkout-total-amount">R0.00</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<div id="site-footer"></div>
+
+<!--==================== SCRIPTS ====================-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="database/supabase.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/include.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/auth.js"></script>
+
+<script>
+function renderCheckoutSummary() {
+    const cart = getCart();
+    const container = document.getElementById("checkout-items");
+    const totalEl = document.getElementById("checkout-total-amount");
+
+    if (cart.length === 0) {
+        container.innerHTML = "<p>Your cart is empty.</p>";
+        totalEl.textContent = "R0.00";
+        return 0;
+    }
+
+    let total = 0;
+    container.innerHTML = cart.map(item => {
+        const lineTotal = item.price * item.qty;
+        total += lineTotal;
+        return `
+            <div class="checkout-line">
+                <span>${item.name} x${item.qty}</span>
+                <span>${formatCurrency(lineTotal)}</span>
+            </div>
+        `;
+    }).join("");
+
+    totalEl.textContent = formatCurrency(total);
+    return total;
+}
+
+let orderTotal = renderCheckoutSummary();
+
+document.getElementById("checkout-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const messageBox = document.getElementById("checkout-message");
+    const cart = getCart();
+
+    if (cart.length === 0) {
+        messageBox.style.color = "red";
+        messageBox.textContent = "Your cart is empty.";
+        return;
+    }
+
+    messageBox.textContent = "Placing your order...";
+
+    const user = await getCurrentUser();
+
+    const { data: order, error: orderError } = await supabase
+        .from("orders")
+        .insert([{
+            customer_id: user ? user.id : null,
+            customer_name: document.getElementById("checkout-name").value,
+            customer_email: document.getElementById("checkout-email").value,
+            customer_phone: document.getElementById("checkout-phone").value,
+            delivery_address: document.getElementById("checkout-address").value,
+            total: orderTotal
+        }])
+        .select()
+        .single();
+
+    if (orderError) {
+        console.error("XGM: order creation failed", orderError);
+        messageBox.style.color = "red";
+        messageBox.textContent = "Something went wrong placing your order. Please try again.";
+        return;
+    }
+
+    const orderItems = cart.map(item => ({
+        order_id: order.id,
+        product_id: item.id,
+        quantity: item.qty,
+        price: item.price
+    }));
+
+    const { error: itemsError } = await supabase
+        .from("order_items")
+        .insert(orderItems);
+
+    if (itemsError) {
+        console.error("XGM: order items failed", itemsError);
+        messageBox.style.color = "red";
+        messageBox.textContent = "Order created, but there was an issue saving items.";
+        return;
+    }
+
+    saveCart([]);
+    messageBox.style.color = "green";
+    messageBox.textContent = "Order placed successfully! Redirecting...";
+    setTimeout(() => { window.location.href = "index.html"; }, 2000);
+});
+</script>
+
+</body>
+
+</html>
