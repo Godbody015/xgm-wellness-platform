@@ -565,6 +565,39 @@ uses it. Reuses the same CSS variables (--primary, --accent,
     position: relative;
     z-index: 2;
 }
+
+.hero-tag{
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgba(255,255,255,.6);
+    backdrop-filter: blur(4px);
+    color: var(--primary);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: .85rem;
+    letter-spacing: .5px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1{
+    font-size: 3.6rem;
+    color: var(--heading);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-content p{
+    font-size: 1.1rem;
+    color: #333;
+    max-width: 460px;
+    margin-bottom: 34px;
+}
+
+.hero-buttons{
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
 /*==================== PAGE BANNER ====================*/
 .page-banner{
     padding: 100px 24px 60px;
