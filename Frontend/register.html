@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | XGM Wellness</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<!--==================== REGISTER SECTION ====================-->
+<section class="auth-section">
+
+    <div class="auth-box reveal-fade">
+
+        <h2>Create Your Account</h2>
+        <p>Join XGM Wellness for a better shopping experience.</p>
+
+        <form id="register-form" class="auth-form">
+            <input type="text" id="register-name" placeholder="Full Name" required>
+            <input type="email" id="register-email" placeholder="Email Address" required>
+            <input type="tel" id="register-phone" placeholder="Phone Number">
+            <input type="password" id="register-password" placeholder="Password" required minlength="6">
+
+            <p id="register-message" class="auth-message"></p>
+
+            <button type="submit" class="primary-btn">Create Account <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+
+        <p class="auth-switch">
+            Already have an account? <a href="login.html">Log in</a>
+        </p>
+
+    </div>
+
+</section>
+
+<div id="site-footer"></div>
+
+<!--==================== SCRIPTS ====================-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="database/supabase.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/include.js"></script>
+<script src="assets/js/auth.js"></script>
+
+<script>
+document.getElementById("register-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const fullName = document.getElementById("register-name").value;
+    const email = document.getElementById("register-email").value;
+    const phone = document.getElementById("register-phone").value;
+    const password = document.getElementById("register-password").value;
+    const messageBox = document.getElementById("register-message");
+
+    messageBox.textContent = "Creating your account...";
+
+    const result = await signUp(email, password, fullName, phone);
+
+    if (result.success) {
+        messageBox.style.color = "green";
+        messageBox.textContent = result.message;
+        setTimeout(() => { window.location.href = "login.html"; }, 2000);
+    } else {
+        messageBox.style.color = "red";
+        messageBox.textContent = result.message;
+    }
+});
+</script>
+
+</body>
+
+</html>
