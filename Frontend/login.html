@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Log In | XGM Wellness</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<!--==================== LOGIN SECTION ====================-->
+<section class="auth-section">
+
+    <div class="auth-box reveal-fade">
+
+        <h2>Welcome Back</h2>
+        <p>Log in to your XGM Wellness account.</p>
+
+        <form id="login-form" class="auth-form">
+            <input type="email" id="login-email" placeholder="Email Address" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+
+            <p id="login-message" class="auth-message"></p>
+
+            <button type="submit" class="primary-btn">Log In <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+
+        <p class="auth-switch">
+            Don't have an account? <a href="register.html">Create one</a>
+        </p>
+
+    </div>
+
+</section>
+
+<div id="site-footer"></div>
+
+<!--==================== SCRIPTS ====================-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="database/supabase.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/include.js"></script>
+<script src="assets/js/auth.js"></script>
+
+<script>
+document.getElementById("login-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+    const messageBox = document.getElementById("login-message");
+
+    messageBox.textContent = "Logging in...";
+
+    const result = await logIn(email, password);
+
+    if (result.success) {
+        messageBox.style.color = "green";
+        messageBox.textContent = result.message;
+        setTimeout(() => { window.location.href = "index.html"; }, 1000);
+    } else {
+        messageBox.style.color = "red";
+        messageBox.textContent = result.message;
+    }
+});
+</script>
+
+</body>
+
+</html>
