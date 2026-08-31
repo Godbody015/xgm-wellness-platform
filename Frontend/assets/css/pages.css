@@ -598,6 +598,43 @@ uses it. Reuses the same CSS variables (--primary, --accent,
     gap: 18px;
     flex-wrap: wrap;
 }
+/*==================== TRANSPARENT HEADER OVER HERO ====================*/
+body:has(.hero) .header{
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    z-index: 10;
+}
+
+/*==================== NAV VISIBILITY OVER HERO ====================*/
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: linear-gradient(180deg, rgba(0,0,0,.35), transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+
+body:has(.hero) .header .logo,
+body:has(.hero) .nav-links li a,
+body:has(.hero) .nav-icons{
+    color: #fff;
+}
+
+body:has(.hero) .nav-links li a:hover{
+    color: var(--accent);
+}
+
+body:has(.hero) .cart-icon .cart-count{
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 0 0 2px rgba(255,255,255,.8);
+}
 /*==================== PAGE BANNER ====================*/
 .page-banner{
     padding: 100px 24px 60px;
