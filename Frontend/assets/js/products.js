@@ -63,6 +63,18 @@ async function loadAllProducts(){
     }
     container.innerHTML = products.map(renderProductCard).join("");
 }
+async function loadAllProducts(){
+    const container = document.getElementById("products-grid");
+    if(!container) return;
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category");
+    const products = await fetchProducts({ category });
+    if(products.length === 0){
+        container.innerHTML = `<p class="products-empty">No products found${category ? ` in ${category}` : ""}.</p>`;
+        return;
+    }
+    container.innerHTML = products.map(renderProductCard).join("");
+}
 document.addEventListener("DOMContentLoaded", () => {
     loadFeaturedProducts();
     loadAllProducts();
