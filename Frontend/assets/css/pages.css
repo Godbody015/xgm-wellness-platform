@@ -1081,7 +1081,7 @@ RESELLER HERO — mockup match
 ==================================================*/
 
 .reseller-hero-mockup{
-    --hero-cream: #F4EFE6; /* sampled from the banner PNG's flat side — adjust if you see a seam */
+    --hero-cream: #F1E6DB; /* sampled from the banner PNG's flat side — adjust if you see a seam */
     --hero-green: #16342A; /* darker forest green, matches the mockup, not var(--primary) */
     --hero-gold: var(--accent, #D4AF37);
 
