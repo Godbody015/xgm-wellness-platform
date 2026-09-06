@@ -1248,3 +1248,8 @@ RESELLER HERO — mockup match
         justify-content: center;
     }
 }
+.hero-icon-item i{
+    font-size: 1.5rem;
+    color: var(--hero-green);
+    margin-bottom: 4px;
+}
