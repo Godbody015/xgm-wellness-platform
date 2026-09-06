@@ -1075,3 +1075,176 @@ body:has(.hero) .cart-icon .cart-count{
     box-shadow: 0 6px 16px rgba(0,0,0,0.2);
     z-index: 999;
 }
+
+/*==================================================
+RESELLER HERO — mockup match
+==================================================*/
+
+.reseller-hero-mockup{
+    --hero-cream: #F4EFE6; /* sampled from the banner PNG's flat side — adjust if you see a seam */
+    --hero-green: #16342A; /* darker forest green, matches the mockup, not var(--primary) */
+    --hero-gold: var(--accent, #D4AF37);
+
+    background: var(--hero-cream);
+    overflow: hidden;
+    padding: 0;
+}
+
+.reseller-hero-inner{
+    max-width: var(--max-width, 1280px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    align-items: center;
+    min-height: 620px;
+}
+
+.reseller-hero-text{
+    padding: 60px 40px 60px 5%;
+}
+
+.reseller-hero-logo img{
+    width: 130px;
+    margin-bottom: 26px;
+}
+
+.reseller-hero-heading{
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    line-height: 1.15;
+    color: var(--hero-green);
+    margin-bottom: 22px;
+}
+
+.reseller-hero-heading .accent-text{
+    color: var(--hero-gold);
+}
+
+.reseller-hero-copy{
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    max-width: 420px;
+    margin-bottom: 34px;
+    line-height: 1.7;
+}
+
+.reseller-hero-buttons{
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+.reseller-btn-primary,
+.reseller-btn-outline{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: .3px;
+    transition: var(--transition, .35s ease);
+}
+
+.reseller-btn-primary{
+    background: var(--hero-green);
+    color: #fff;
+}
+.reseller-btn-primary:hover{
+    background: #0f2119;
+    transform: translateY(-3px);
+}
+
+.reseller-btn-outline{
+    border: 2px solid var(--hero-gold);
+    color: var(--hero-gold);
+}
+.reseller-btn-outline:hover{
+    background: var(--hero-gold);
+    color: #fff;
+}
+
+.reseller-hero-icons{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hero-icon-item{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-right: 22px;
+    margin-right: 22px;
+    border-right: 1px solid #d8d0c0;
+}
+.hero-icon-item:last-child{
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.hero-icon-item img{
+    width: 32px;
+    height: 32px;
+}
+
+.hero-icon-item span{
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+    color: var(--hero-green);
+    line-height: 1.4;
+}
+
+.reseller-hero-image{
+    position: relative;
+    height: 100%;
+    align-self: stretch;
+}
+
+.reseller-hero-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+    display: block;
+}
+
+/*---- Responsive ----*/
+@media (max-width: 992px){
+    .reseller-hero-inner{
+        grid-template-columns: 1fr;
+    }
+    .reseller-hero-text{
+        padding: 50px 6% 30px;
+    }
+    .reseller-hero-image{
+        height: 420px;
+    }
+    .reseller-hero-heading{
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 600px){
+    .reseller-hero-icons{
+        gap: 20px 0;
+    }
+    .hero-icon-item{
+        width: 45%;
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+    }
+    .reseller-hero-buttons{
+        flex-direction: column;
+    }
+    .reseller-btn-primary,
+    .reseller-btn-outline{
+        width: 100%;
+        justify-content: center;
+    }
+}
