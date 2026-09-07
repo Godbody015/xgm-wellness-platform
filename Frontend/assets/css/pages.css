@@ -1118,7 +1118,7 @@ RESELLER HERO — mockup match
     max-width: none;
     margin: 0;
     display: grid;
-    grid-template-columns: minmax(420px, 620px) 1fr;
+    grid-template-columns: minmax(420px, 820px) 1fr;
     align-items: center;
     min-height: 620px;
 }
