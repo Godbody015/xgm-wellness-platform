@@ -1,0 +1,18 @@
+<section class="track-order-section">
+  <div class="track-order-container">
+    <h1>Track Your Order</h1>
+    <p>Enter the email address you used at checkout to see your order status.</p>
+
+    <form id="track-order-form">
+      <label for="track-email">Email address</label>
+      <input type="email" id="track-email" required placeholder="you@example.com">
+      <button type="submit">Track Order</button>
+    </form>
+
+    <div id="track-order-message"></div>
+    <div id="track-order-results"></div>
+  </div>
+</section>
+
+<!-- Make sure this comes AFTER supabase.js in your script tags -->
+<script src="../assets/js/track-order.js"></script>
