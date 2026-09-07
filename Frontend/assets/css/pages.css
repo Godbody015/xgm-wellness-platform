@@ -1357,35 +1357,26 @@ AUTH (LOGIN / REGISTER)
     color: var(--primary-dark);
 }
 
-/*==================== RESELLER HERO FIX ====================*/
-.reseller-section{
-    display: flex;
-    align-items: center;
+/*==================== RESELLER HERO GRID FIX ====================*/
+.reseller-hero-mockup .reseller-hero-inner{
+    display: grid;
+    grid-template-columns: minmax(420px, 560px) minmax(420px, 620px);
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 50px;
+    align-items: center;
+    gap: 60px;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 60px 40px;
-    background: #F2E7DC;
+    padding: 60px 24px;
 }
-.reseller-content{
-    flex: 1 1 420px;
-    max-width: 480px;
-}
-.reseller-image{
-    flex: 1 1 480px;
-    max-width: 640px;
-}
-.reseller-image img{
+.reseller-hero-mockup .reseller-hero-image img{
     width: 100%;
     height: auto;
     display: block;
     border-radius: 16px;
 }
-@media (max-width: 860px){
-    .reseller-section{
-        text-align: center;
-        padding: 50px 24px;
+@media (max-width: 992px){
+    .reseller-hero-mockup .reseller-hero-inner{
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
     }
 }
