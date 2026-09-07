@@ -1,18 +1,48 @@
-<section class="track-order-section">
-  <div class="track-order-container">
-    <h1>Track Your Order</h1>
-    <p>Enter the email address you used at checkout to see your order status.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Order | XGM Wellness</title>
+    <meta name="description" content="Track the status of your XGM Wellness order.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+<div id="site-header"></div>
 
-    <form id="track-order-form">
-      <label for="track-email">Email address</label>
-      <input type="email" id="track-email" required placeholder="you@example.com">
-      <button type="submit">Track Order</button>
-    </form>
-
-    <div id="track-order-message"></div>
-    <div id="track-order-results"></div>
-  </div>
+<section class="page-banner">
+    <div class="page-banner-content">
+        <span>Order Status</span>
+        <h1>Track Your Order</h1>
+        <p>Enter the email address you used at checkout to see your order status.</p>
+    </div>
 </section>
 
-<!-- Make sure this comes AFTER supabase.js in your script tags -->
-<script src="../assets/js/track-order.js"></script>
+<section class="track-order-section">
+    <div class="track-order-container">
+        <form id="track-order-form" class="contact-form">
+            <input type="email" id="track-email" placeholder="Email Address" required>
+            <button type="submit" class="primary-btn">Track Order <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+
+        <div id="track-order-message"></div>
+        <div id="track-order-results"></div>
+    </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!--==================== SCRIPTS ====================-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="database/supabase.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/include.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/track-order.js"></script>
+</body>
+</html>
