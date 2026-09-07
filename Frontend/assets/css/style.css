@@ -1489,19 +1489,16 @@ RESPONSIVE
 }
 
 .nav-links{
-
     width:100%;
-
     display:none;
-
     flex-direction:column;
-
     margin-top:20px;
-
     gap:18px;
-
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
-
 .nav-links.show-menu{
 
     display:flex;
