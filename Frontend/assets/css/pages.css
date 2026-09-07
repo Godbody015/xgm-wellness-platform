@@ -559,6 +559,12 @@ uses it. Reuses the same CSS variables (--primary, --accent,
     z-index: -1;
 }
 
+@media (max-width: 768px){
+    .hero-bg{
+        object-position: 80% center;
+    }
+}
+
 .hero-content{
     max-width: 560px;
     padding: 0 8%;
