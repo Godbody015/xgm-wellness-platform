@@ -659,6 +659,9 @@ body:has(.hero) .cart-icon .cart-count{
     color: #fff;
     box-shadow: 0 0 0 2px rgba(255,255,255,.8);
 }
+body:has(.hero) .nav-links.show-menu li a{
+    color: var(--heading) !important;
+}
 /*==================== PAGE BANNER ====================*/
 .page-banner{
     padding: 100px 24px 60px;
