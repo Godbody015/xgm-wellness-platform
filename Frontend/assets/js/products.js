@@ -88,8 +88,57 @@ function initFilterTabs(){
         });
     });
 }
+async function loadProductDetail(){
+    const container = document.getElementById("product-detail");
+    if(!container) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    if(!id){
+        container.innerHTML = `<p class="products-empty">No product specified.</p>`;
+        return;
+    }
+
+    const { data: product, error } = await supabaseClient
+        .from("products")
+        .select("*")
+        .eq("id", id)
+        .single();
+
+    if(error || !product){
+        console.error("XGM: failed to fetch product", error);
+        container.innerHTML = `<p class="products-empty">Sorry, we couldn't find that product.</p>`;
+        return;
+    }
+
+    container.innerHTML = `
+        <div class="product-detail-image">
+            <img src="${product.image_url}" alt="${product.name}">
+        </div>
+        <div class="product-detail-info">
+            <h1>${product.name}</h1>
+            <span class="price">${formatCurrency(product.price)}</span>
+
+            <div class="product-detail-description">
+                <p>${product.description || ""}</p>
+            </div>
+
+            <div class="product-detail-block">
+                <h3>Ingredients</h3>
+                <p>${product.ingredients || "Ingredients information coming soon."}</p>
+            </div>
+
+            <div class="product-detail-block">
+                <h3>Directions for Use</h3>
+                <p>${product.directions || "Directions for use coming soon."}</p>
+            </div>
+        </div>
+    `;
+}
 document.addEventListener("DOMContentLoaded", () => {
     loadFeaturedProducts();
     loadAllProducts();
     initFilterTabs();
+    loadProductDetail();
 });
