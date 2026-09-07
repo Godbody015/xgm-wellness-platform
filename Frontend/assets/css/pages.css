@@ -1356,3 +1356,36 @@ AUTH (LOGIN / REGISTER)
 .auth-switch a:hover{
     color: var(--primary-dark);
 }
+
+/*==================== RESELLER HERO FIX ====================*/
+.reseller-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background: #F2E7DC;
+}
+.reseller-content{
+    flex: 1 1 420px;
+    max-width: 480px;
+}
+.reseller-image{
+    flex: 1 1 480px;
+    max-width: 640px;
+}
+.reseller-image img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+}
+@media (max-width: 860px){
+    .reseller-section{
+        text-align: center;
+        padding: 50px 24px;
+    }
+}
