@@ -5,20 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = document.getElementById('track-email').value.trim();
+    const identifier = document.getElementById('track-identifier').value.trim();
     messageEl.textContent = 'Searching...';
     resultsEl.innerHTML = '';
 
-    // NOTE: assumes supabase.js exposes a shared client as `supabaseClient`.
-    // If your supabase.js exports it under a different name, swap it below.
+    const isEmail = identifier.includes('@');
+    const column = isEmail ? 'email' : 'phone';
+
     const { data: customer, error: customerError } = await supabaseClient
       .from('customers')
       .select('id')
-      .eq('email', email)
+      .eq(column, identifier)
       .maybeSingle();
 
     if (customerError || !customer) {
-      messageEl.textContent = "We couldn't find any orders for that email.";
+      messageEl.textContent = "We couldn't find any orders for that email or phone number.";
       return;
     }
 
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .order('created_at', { ascending: false });
 
     if (ordersError || !orders || orders.length === 0) {
-      messageEl.textContent = "We couldn't find any orders for that email.";
+      messageEl.textContent = "We couldn't find any orders for that email or phone number.";
       return;
     }
 
