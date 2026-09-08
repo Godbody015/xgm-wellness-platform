@@ -155,7 +155,7 @@ CONTACT FORM
 function initializeContactForm(){
     const form=document.querySelector(".contact-form");
     if(!form) return;
-    form.addEventListener("submit",(e)=>{
+    form.addEventListener("submit", async (e)=>{
         e.preventDefault();
         const inputs=form.querySelectorAll("input, textarea");
         let valid=true;
@@ -168,8 +168,23 @@ function initializeContactForm(){
             showToast("Please complete all fields.","error");
             return;
         }
-        showToast("Your message has been sent.","success");
-        form.reset();
+
+        const formData = new FormData(form);
+        try{
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+            const result = await response.json();
+            if(result.success){
+                showToast("Your message has been sent.","success");
+                form.reset();
+            }else{
+                showToast("Something went wrong. Please try again.","error");
+            }
+        }catch(err){
+            showToast("Something went wrong. Please try again.","error");
+        }
     });
 }
 
