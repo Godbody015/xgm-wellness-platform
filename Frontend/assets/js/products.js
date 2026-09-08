@@ -112,6 +112,8 @@ async function loadProductDetail(){
         return;
     }
 
+    window.__currentProduct = product;
+
     container.innerHTML = `
         <div class="product-detail-image">
             <img src="${product.image_url}" alt="${product.name}">
@@ -119,6 +121,10 @@ async function loadProductDetail(){
         <div class="product-detail-info">
             <h1>${product.name}</h1>
             <span class="price">${formatCurrency(product.price)}</span>
+
+            <button class="primary-btn add-to-cart-btn" onclick="addToCart(window.__currentProduct)">
+                Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+            </button>
 
             <div class="product-detail-description">
                 <p>${product.description || ""}</p>
@@ -139,6 +145,7 @@ async function loadProductDetail(){
 document.addEventListener("DOMContentLoaded", () => {
     loadFeaturedProducts();
     loadAllProducts();
+    initFilterTabs();
     initFilterTabs();
     loadProductDetail();
 });
