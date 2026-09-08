@@ -63,15 +63,16 @@
 
     <div class="contact-form-wrap reveal-fade">
         <h2>Send Us a Message</h2>
-        <form class="contact-form">
-            <div class="form-row">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-            </div>
-            <input type="text" placeholder="Subject" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="primary-btn">Send Message <i class="fa-solid fa-arrow-right"></i></button>
-        </form>
+        <form class="contact-form" id="contact-form">
+    <input type="hidden" name="access_key" value="422ec7a0-4db9-4157-b373-667853aec368">
+    <div class="form-row">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+    </div>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit" class="primary-btn">Send Message <i class="fa-solid fa-arrow-right"></i></button>
+</form>
     </div>
 
 </section>
