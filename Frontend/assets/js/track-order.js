@@ -9,27 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     messageEl.textContent = 'Searching...';
     resultsEl.innerHTML = '';
 
-    const isEmail = identifier.includes('@');
-    const column = isEmail ? 'email' : 'phone';
+    const { data: orders, error } = await supabaseClient.rpc('track_order', { identifier });
 
-    const { data: customer, error: customerError } = await supabaseClient
-      .from('customers')
-      .select('id')
-      .eq(column, identifier)
-      .maybeSingle();
-
-    if (customerError || !customer) {
-      messageEl.textContent = "We couldn't find any orders for that email or phone number.";
-      return;
-    }
-
-    const { data: orders, error: ordersError } = await supabaseClient
-      .from('orders')
-      .select('total, status, payment_method, created_at')
-      .eq('customer_id', customer.id)
-      .order('created_at', { ascending: false });
-
-    if (ordersError || !orders || orders.length === 0) {
+    if (error || !orders || orders.length === 0) {
       messageEl.textContent = "We couldn't find any orders for that email or phone number.";
       return;
     }
