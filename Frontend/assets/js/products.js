@@ -142,10 +142,10 @@ async function loadProductDetail(){
         </div>
     `;
 }
+
 document.addEventListener("DOMContentLoaded", () => {
     loadFeaturedProducts();
     loadAllProducts();
-    initFilterTabs();
     initFilterTabs();
     loadProductDetail();
 });
